@@ -1,7 +1,7 @@
 export class Character {
 
   #attackDefence = {
-    "Bowman": [25, 25],
+    "Bowerman": [25, 25],
     "Swordsman": [40, 10],
     "Magician": [10, 40],
     "Undead": [25, 25],
@@ -29,8 +29,8 @@ export class Character {
   }
 
   _validateType(type) {
-    if (!["Bowman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"].includes(type)) {
-      throw new Error("Type should be one of Bowman, Swordsman, Magician, Daemon, Undead, Zombie");
+    if (!["Bowerman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"].includes(type)) {
+      throw new Error("Type should be one of Bowerman, Swordsman, Magician, Daemon, Undead, Zombie");
     }
     return type;
   }

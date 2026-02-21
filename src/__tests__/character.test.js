@@ -4,18 +4,18 @@ import { Character } from "../js/Character";
 test("test make a character", () => {
   const expected = { 
     name: "Ivan", 
-    type: "Bowman", 
+    type: "Bowerman", 
     health: 100, 
     level: 1, 
     attack: 25, 
     defence: 25
   };
-  expect(new Character("Ivan", "Bowman")).toEqual(expected);
+  expect(new Character("Ivan", "Bowerman")).toEqual(expected);
 });
 
 test("test invalid name", () => {
   expect(() => {
-    new Character("I", "Bowman");
+    new Character("I", "Bowerman");
   }).toThrow(
     "Name's lentgh should be more then 2 and less then 10 symbols"
   );
@@ -25,7 +25,7 @@ test("test invalid type", () => {
   expect(() => {
     new Character("Ivan", "Human");
   }).toThrow(
-    "Type should be one of Bowman, Swordsman, Magician, Daemon, Undead, Zombie"
+    "Type should be one of Bowerman, Swordsman, Magician, Daemon, Undead, Zombie"
   );
 });
 
