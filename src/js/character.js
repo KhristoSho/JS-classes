@@ -1,14 +1,5 @@
 export class Character {
 
-  #attackDefence = {
-    "Bowerman": [25, 25],
-    "Swordsman": [40, 10],
-    "Magician": [10, 40],
-    "Undead": [25, 25],
-    "Zombie": [40, 10],
-    "Daemon": [10, 40],
-  };
-
   constructor(
     name,
     type,
@@ -17,8 +8,6 @@ export class Character {
     this.type = this._validateType(type);
     this.health = 100;
     this.level = 1;
-    this.attack = this.#attackDefence[type][0];
-    this.defence = this.#attackDefence[type][1];
   }
 
   _validateName(name) {
