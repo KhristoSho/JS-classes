@@ -30,23 +30,23 @@ test("test invalid type", () => {
 });
 
 test("test for character's level up", () => {
-  const character = new Character("Ivan", 'Magician');
+  const character = new Character("Ivan", "Magician");
   character.levelUp();
   expect(character.level).toBe(2);
-})
+});
 
 test("test for dead character's level up for", () => {
   expect(() => {
-    const character = new Character("Ivan", 'Magician');
+    const character = new Character("Ivan", "Magician");
     character.health = 0;
-    character.levelUp()
+    character.levelUp();
   }).toThrow(
     "Cannot up level for dead character"
   );
-})
+});
 
 test("test character's damage", () => {
-  const character = new Character("Ivan", 'Magician');
+  const character = new Character("Ivan", "Magician");
   character.damage(50);
   expect(character.health).toBe(70);
-})
+});
