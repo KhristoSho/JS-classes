@@ -47,7 +47,7 @@ test("test invalid name", () => {
   expect(() => {
     new Daemon("I", "Daemon");
   }).toThrow(
-    "Name's lentgh should be more then 2 and less then 10 symbols"
+    "Name's length should be more than 2 and less then 10 symbols"
   );
 });
 
@@ -79,4 +79,41 @@ test("test character's damage", () => {
   const character = new Zombie("Ivan", "Zombie");
   character.damage(50);
   expect(character.health).toBe(55);
+});
+
+test("test character's damage with no health", () => {
+  const zombie = new Zombie("Ivan", "Zombie");
+  zombie.health = 0;
+  zombie.damage(50);
+  expect(zombie.health).toBe(0);
+});
+
+test("test make a character with default Bowerman", () => {
+  const hero = new Bowerman("Ivan");
+  expect(hero.type).toBe("Bowerman");
+});
+
+test("test make a character with default Daemon", () => {
+  const hero = new Daemon("Ivan");
+  expect(hero.type).toBe("Daemon");
+});
+
+test("test make a character with default Magician", () => {
+  const hero = new Magician("Ivan");
+  expect(hero.type).toBe("Magician");
+});
+
+test("test make a character with default Swordsman", () => {
+  const hero = new Swordsman("Ivan");
+  expect(hero.type).toBe("Swordsman");
+});
+
+test("test make a character with default Undead", () => {
+  const hero = new Undead("Ivan");
+  expect(hero.type).toBe("Undead");
+});
+
+test("test make a character with default Zombie", () => {
+  const hero = new Zombie("Ivan");
+  expect(hero.type).toBe("Zombie");
 });
